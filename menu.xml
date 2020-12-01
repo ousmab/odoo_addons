@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- menu -->
+    <menuitem id="module_root" name="Formation"/>
+        <menuitem id="module_root_menu" parent ="module_root" name="Université" sequence="1"/>
+            <menuitem id="module_menu" parent ="module_root_menu" name="Module" action="module_action_view"/>
+            <menuitem id="section_menu" parent ="module_root_menu" name="Section" action="section_action_view"/>
+            <menuitem id="level_menu" parent ="module_root_menu" name="Niveau" action="level_action"/>
+            <menuitem id="cycle_menu" parent ="module_root_menu" name="Cycle" action="cycle_action"/>
+
+        <menuitem id="inscription_menu" parent ="module_root" name="Inscription" sequence="2"/>
+            <menuitem id="registration_menu" parent ="inscription_menu" name="Inscription" action="registration_action"/>
+            <menuitem id="claim_menu" parent ="inscription_menu" name="Reclammation" action="claim_action"/>
+
+        <menuitem id="configuration_menu" parent ="module_root" name="Configuration" sequence="3"/>
+            <menuitem id="year_menu" parent ="configuration_menu" name="Année Universitaire" action="year_action"/>
+            <menuitem id="session_menu" parent ="configuration_menu" name="Session" action="session_action"/>
+    
+
+</odoo>

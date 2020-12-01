@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- session tree view -->
+    <record id="session_view_tree" model="ir.ui.view">
+        <field name="name">session.view.tree</field>
+        <field name="model">session.session</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="year_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- session form view -->
+    <record id="session_view_form" model="ir.ui.view">
+        <field name="name">session.view.form</field>
+        <field name="model">session.session</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                             <field name="name"/>
+                              <field name="start_date"/>
+                        </group>
+                         <group>
+                             <field name="code"/>
+                              <field name="end_date"/>
+                              <field name="year_id"/>
+                        </group>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- session search search view -->
+    <record id="session_view_search" model="ir.ui.view">
+        <field name="name">session.view.search</field>
+        <field name="model">session.session</field>
+        <field name="arch" type="xml">
+            <search string="Session recherche">
+                <group>
+                    <filter string="Année"  domain="[]" context="{'group_by':'start_date'}" />
+                </group>
+                
+            </search>
+        </field>
+    </record>
+
+    <!-- session action window -->
+    <record id="session_action" model="ir.actions.act_window">
+        <field name="name">Session</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">session.session</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Ajoutez une nouvelle session
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+    </record>
+
+</odoo>

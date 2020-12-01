@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record    model="ir.ui.view" id="section_tree_view" >
+        <field name="name">section.section.tree</field>
+        <field name="model">section.section</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Sections">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="description"/>
+                <field name="level_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="section_form_view">
+        <field name="name">section.section.form</field>
+        <field name="model">section.section</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form >
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="level_id"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page String="Modules">
+                            <field name="module_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>     
+
+
+
+    <record model="ir.actions.act_window" id="section_action_view">
+        <field name="name">Sections</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="res_model">section.section</field>
+    </record>
+
+</odoo>

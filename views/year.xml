@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- year tree view -->
+    <record id="year_view_tree" model="ir.ui.view">
+        <field name="name">year.view.tree</field>
+        <field name="model">year.year</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- year  form view -->
+    <record id="year_view_form" model="ir.ui.view">
+        <field name="name">year .view.form</field>
+        <field name="model">year.year</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                       <group>
+                            <field name="name"/>
+                            <field name="start_date"/>
+                       </group>
+                        <group>
+                            <field name="code"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Sessions">
+                            <field name="session_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- model.name action window -->
+    <record id="year_action" model="ir.actions.act_window">
+        <field name="name">Année universitaire</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">year.year</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Ajouter une nouvelle année universitaire
+            </p><p>
+                
+            </p>
+        </field>
+    </record>
+
+</odoo>

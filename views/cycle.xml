@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- cycles tree view -->
+    <record id="cycle_view_tree" model="ir.ui.view">
+        <field name="name">cycle.view.tree</field>
+        <field name="model">cycle.cycle</field>
+        <field name="arch" type="xml">
+            <tree>
+               
+                <field name="name"/>
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- cycle form view -->
+    <record id="model_name_view_form" model="ir.ui.view">
+        <field name="name">cycle.view.form</field>
+        <field name="model">cycle.cycle</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                        </group>                     
+                    </group>
+                    <notebook>
+                        <page string="Niveau">
+                            <field name="level_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- cycle action window -->
+    <record id="cycle_action" model="ir.actions.act_window">
+        <field name="name">Cycle</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cycle.cycle</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+               veuillez créer votre nouveau cycle ici
+            </p><p>
+                    more details ici
+                 </p>
+        </field>
+    </record>
+
+</odoo>
